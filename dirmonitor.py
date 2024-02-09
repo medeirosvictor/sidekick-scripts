@@ -12,6 +12,17 @@ accepted_file_types = [
 image_file_types = ['jpg', 'jpeg', 'png', 'gif']
 document_file_types = ['pdf', 'txt', 'doc', 'docx', 'xls', 'xlsx', 'ppt', 'pptx']
 installer_file_types = ['dmg', 'pkg', 'app', 'exe', 'msi', 'deb', 'rpm']
+xml_file_types = ['xml']
+
+def get_destination_folder(file_type):
+    if file_type in image_file_types:
+        return os.path.join(path, 'Images')
+    elif file_type in document_file_types:
+        return os.path.join(path, 'Documents')
+    elif file_type in installer_file_types:
+        return os.path.join(path, 'Installers')
+    elif file_type in xml_file_types:
+        return os.path.join(path, 'XMLs')
 
 class MyHandler(FileSystemEventHandler):
     def on_created(self, event):
@@ -28,14 +39,6 @@ class MyHandler(FileSystemEventHandler):
             dest_path = os.path.join(dest_folder, file_name)
             shutil.move(src_path, dest_path)
             print(f"Moved file: {file_name} to {dest_folder}")
-
-def get_destination_folder(file_type):
-    if file_type in image_file_types:
-        return os.path.join(path, 'Images')
-    elif file_type in document_file_types:
-        return os.path.join(path, 'Documents')
-    elif file_type in installer_file_types:
-        return os.path.join(path, 'Installers')
 
 path = os.path.expanduser("~/Downloads")  # Path to the Downloads folder
 
