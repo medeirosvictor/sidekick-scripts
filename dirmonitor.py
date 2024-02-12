@@ -36,6 +36,8 @@ class MyHandler(FileSystemEventHandler):
                 return 
             dest_folder = get_destination_folder(file_type)
             os.makedirs(dest_folder, exist_ok=True)
+            if not os.path.exists(dest_folder):
+                os.makedirs(dest_path, exist_ok=True)
             dest_path = os.path.join(dest_folder, file_name)
             shutil.move(src_path, dest_path)
             print(f"Moved file: {file_name} to {dest_folder}")
