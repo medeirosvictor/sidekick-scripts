@@ -1,0 +1,1 @@
+C:\controlmymonitor\ControlMyMonitor.exe /SetValue 60 18
