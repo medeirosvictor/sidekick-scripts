@@ -1,1 +1,1 @@
-C:\controlmymonitor\ControlMyMonitor.exe /SetValue 60 0
+C:\controlmymonitor\ControlMyMonitor.exe /SetValue "\\.\DISPLAY1\Monitor0"  60 15
