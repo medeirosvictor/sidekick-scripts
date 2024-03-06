@@ -1,6 +1,7 @@
 .quick-input-widget {
 	position: absolute;
-	width: 600px;
+	width: 800px;
+    font-size: 16px;
 	z-index: 2550;
 	left: 50%;
 	top: 25% !important; 
