@@ -5,3 +5,11 @@ vim.cmd("set shiftwidth=4")
 vim.g.mapleader = " "
 
 vim.wo.number = true
+
+vim.opt.termguicolors = true
+
+vim.opt.signcolumn = "yes"
+
+vim.opt.splitbelow = true
+vim.opt.splitright = true
+
